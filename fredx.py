@@ -318,11 +318,9 @@ def flower():
 
 def star():
     '''Draws a star'''
-    for i in range(17):
+    for i in range(12):
         fd(100)
         lt(150)
-        if abs(__turtle__.pos()) < 1:
-            break
 
 #Setup stuff
 def begin():
