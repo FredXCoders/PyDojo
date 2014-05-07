@@ -279,10 +279,10 @@ def hello_world():
     pu()
     sx(-265)
     pd()
-    draw_letters(True, "green", *[h, e, l, l, o])
+    draw_letters(True, "green", h, e, l, l, o)
     pu()
     sx(gx() + 30)
-    draw_letters(True, "green", *[w, o, r, l, d])
+    draw_letters(True, "green", w, o, r, l, d)
 
 # Shapes
 def square(size=100):
