@@ -317,6 +317,14 @@ def square(size=100):
         fd(size)
         lt(90)
 
+def rectangle(size=100):
+    '''draws a rectangle'''
+    for i in range(2):
+        fd(size)
+        lt(90)
+        fd(size/2)
+        lt(90)
+
 def hexagon(size=100):
     '''draws a hexagon'''
     for i in range(6):
@@ -328,6 +336,12 @@ def octagon(size=100):
     for i in range(8):
         fd(size)
         lt(45)
+
+def triangle(size=100):
+    '''draws a triangle'''
+    for i in range(3):
+        fd(size)
+        lt(120)
 
 def flower():
     '''Draws a flower like thing on the screen'''
@@ -351,6 +365,71 @@ def loops(size=50):
     for i in range(45):
         circle(size)
         lt(8)
+
+def house():
+    '''draws a house'''
+    oc = color()
+    fc('tan')
+    bf()
+    square()
+    ef()
+    fd(70)
+    lt(90)
+    fc('dark red')
+    bf()
+    rectangle(75)
+    ef()
+    pu()
+    goto(xcor()-70,ycor()+100)
+    rt(90)
+    pd()
+    fc('tan')
+    bf()
+    triangle(100)
+    ef()
+    pu()
+    sety(ycor()-100)
+    color(oc[0])
+    fc(oc[1])
+    pd()
+
+def tree():
+    '''draw a tree'''
+    oc = color()
+    pu()
+    fd(40)
+    pd()
+    fc('tan')
+    color('tan')
+    bf()
+    goto(xcor()+20,ycor())
+    goto(xcor(),ycor()+80)
+    goto(xcor()-20,ycor())
+    goto(xcor(),ycor()-80)
+    ef()
+    fc('dark green')
+    color('dark green')
+    pu()
+    goto(xcor()+10,ycor()+80)
+    pd()
+    bf()
+    circle(20)
+    ef()
+    goto(xcor()-20,ycor()-20)
+    bf()
+    circle(20)
+    ef()
+    pu()
+    goto(xcor()+40,ycor())
+    pd()
+    bf()
+    circle(20)
+    ef()
+    pu()
+    goto(xcor()-70,ycor()-60)
+    pd()
+    color(oc[0])
+    fc(oc[1])
 
 #Setup stuff
 def begin():
