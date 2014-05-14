@@ -356,6 +356,7 @@ def loops(size=50):
 def begin():
     '''Starts up the turtle screen and sets up the turtle object'''
     sc = Screen()
+    sc.title("Am I not turtley enough for you.  Turtle, turtle, turtle.")
     sc._root.attributes("-topmost", 1)  # hack to get the window to show in front of the terminal
     sc._root.attributes("-topmost", 0)
 
