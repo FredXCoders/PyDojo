@@ -42,7 +42,7 @@ def h(fill=False):
     '''draws a capital H.
      This is a DOCstring, which is a special comment that DOCuments our code.  When you type help() in python it
      displays these strings.  Don't take my word for it... try it yourself!'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(10)
     lt(90)
     fd(50)
@@ -67,14 +67,14 @@ def h(fill=False):
     lt(90)
     fd(110)
     lt(90)
-    if fill: end_fill()  # single statement 'if' can be put on the same line
+    if fill: ef()  # single statement 'if' can be put on the same line
     pu()
     fd(50)
     pd()
 
 def e(fill=False):
     '''draws a capital E.  Docstrings need to be the first line in a function definition'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(40)
     lt(90)
     fd(10)
@@ -99,14 +99,14 @@ def e(fill=False):
     lt(90)
     fd(110)
     lt(90)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     fd(50)
     pd()
 
 def l(fill=False):
     '''draws a capital L.  Doctrings must use the multi-line comment format.'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(40)
     lt(90)
     fd(10)
@@ -119,7 +119,7 @@ def l(fill=False):
     lt(90)
     fd(110)
     lt(90)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     fd(50)
     pd()
@@ -129,36 +129,36 @@ def o(fill=False):
     pu()
     fd(20)
     pd()
-    if fill: begin_fill()
+    if fill: bf()
     circle(20, 90)
     fd(70)
     circle(20, 180)
     fd(70)
     circle(20, 90)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     sety(ycor() + 10)
     pd()
-    fc = fillcolor()
-    fillcolor(getscreen().bgcolor())
-    begin_fill()
+    cfc = fc()
+    fc(getscreen().bgcolor())
+    bf()
     circle(10, 90)
     fd(70)
     circle(10, 180)
     fd(70)
     circle(10, 90)
-    end_fill()
+    ef()
     pu()
     goto(xcor() + 30, ycor() - 10)
     pd()
-    fillcolor(fc)
+    fc(cfc)
 
 def w(fill=False):
     '''draws a capital W.'''
     pu()
     sety(ycor() + 110)
     pd()
-    if fill: begin_fill()
+    if fill: bf()
     goto(xcor() + 10, ycor() - 110)
     goto(xcor() + 5, ycor())
     goto(xcor() + 5, ycor() + 50)
@@ -172,14 +172,14 @@ def w(fill=False):
     goto(xcor() - 2, ycor() - 20)
     goto(xcor() - 5, ycor() + 55)
     goto(xcor() - 10, ycor())
-    if fill: end_fill()
+    if fill: ef()
     pu()
     goto(xcor() + 50, ycor() - 110)
     pd()
 
 def r(fill=False):
     '''draws a capital R.'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(10)
     lt(90)
     fd(50)
@@ -193,14 +193,14 @@ def r(fill=False):
     fd(20)
     lt(90)
     fd(110)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     goto(xcor() + 10, ycor() + 60)
     pd()
     lt(90)
-    fc = fillcolor()
-    fillcolor(getscreen().bgcolor())
-    begin_fill()
+    cfc = fc()
+    fc(getscreen().bgcolor())
+    bf()
     fd(10)
     circle(10, 90)
     fd(20)
@@ -208,8 +208,8 @@ def r(fill=False):
     fd(10)
     lt(90)
     fd(40)
-    end_fill()
-    fillcolor(fc)
+    ef()
+    fc(cfc)
     lt(90)
     pu()
     goto(xcor() + 40, ycor() - 60)
@@ -217,7 +217,7 @@ def r(fill=False):
 
 def d(fill=False):
     '''draws a capital D'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(20)
     circle(20, 90)
     fd(70)
@@ -226,13 +226,13 @@ def d(fill=False):
     lt(90)
     fd(110)
     lt(90)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     goto(xcor() + 10, ycor() + 10)
     pd()
-    fc = fillcolor()
-    fillcolor(getscreen().bgcolor())
-    begin_fill()
+    cfc = fc()
+    fc(getscreen().bgcolor())
+    bf()
     fd(10)
     circle(10, 90)
     fd(70)
@@ -240,16 +240,16 @@ def d(fill=False):
     fd(10)
     lt(90)
     fd(90)
-    end_fill()
+    ef()
     lt(90)
     pu()
     goto(xcor() + 40, ycor() - 10)
     pd()
-    fillcolor(fc)
+    fc(cfc)
 
 def a(fill=True):
     '''draws a capital A.'''
-    if fill: begin_fill()
+    if fill: bf()
     fd(10)
     goto(xcor() + 5, ycor() + 40)
     fd(10)
@@ -258,19 +258,19 @@ def a(fill=True):
     goto(xcor() - 15, ycor() + 110)
     setx(xcor() - 10)
     goto(xcor() - 15, ycor() - 110)
-    if fill: end_fill()
+    if fill: ef()
     pu()
     goto(xcor() + 17, ycor() + 50)
     pd()
-    if fill: begin_fill()
-    fc = fillcolor()
-    fillcolor(getscreen().bgcolor())
-    begin_fill()
+    if fill: bf()
+    cfc = fc()
+    fc(getscreen().bgcolor())
+    bf()
     fd(6)
     goto(xcor() - 3, ycor() + 40)
     goto(xcor() - 3, ycor() - 40)
-    if fill: end_fill()
-    fillcolor(fc)
+    if fill: ef()
+    fc(cfc)
     pu()
     goto(xcor() + 33, ycor() - 50)
     pd()
@@ -278,7 +278,7 @@ def a(fill=True):
 
 def draw_letters(fill=False, color=None, *letters):
     '''Draws a series of letters'''
-    if fill and color:fillcolor(color)
+    if fill and color:fc(color)
     for letter in letters:
         letter(fill)
 
@@ -300,8 +300,8 @@ def hello_world_rainbow():
     draw_letters(True, "pink", l)
     draw_letters(True, "red", d)
 
-def hello_world():
-    '''draws hello world message in cool green color'''
+def hola_world():
+    '''draws hola world message in cool green color'''
     pu()
     setx(-215)
     pd()
@@ -313,27 +313,26 @@ def hello_world():
 # Shapes
 def square(size=100):
     '''draws a square'''
-    rt(45)
-    circle(size,steps=4)
-    lt(45)
+    for i in range(4):
+        fd(size)
+        lt(90)
 
 def hexagon(size=100):
     '''draws a hexagon'''
-    rt(30)
-    circle(size,steps=6)
-    lt(30)
+    for i in range(6):
+        fd(size)
+        lt(60)
 
 def octagon(size=100):
     '''draws an octagon'''
-    rt(22.5)
-    circle(size,steps=8)
-    lt(22.5)
+    for i in range(8):
+        fd(size)
+        lt(45)
 
 def flower():
     '''Draws a flower like thing on the screen'''
     for i in range(8):
         rt(45)
-
         for j in range(6):
             tracer(False)
             for k in range(90):
@@ -342,17 +341,23 @@ def flower():
             rt(90)
             tracer(True,10)
 
-def star():
+def star(size=100):
     '''Draws a star'''
     for i in range(12):
-        fd(100)
+        fd(size)
         lt(150)
+
+def loops(size=50):
+    for i in range(45):
+        circle(size)
+        lt(8)
 
 #Setup stuff
 def begin():
     '''Starts up the turtle screen and sets up the turtle object'''
     sc = Screen()
     sc._root.attributes("-topmost", 1)  # hack to get the window to show in front of the terminal
+    sc._root.attributes("-topmost", 0)
 
     if __name__ == "__main__":
         sc.setup(1.0, 1.0)  # make screen full window
@@ -364,12 +369,18 @@ def begin():
 
     speed(0)
     shape("turtle")
-    fillcolor("red")
+    fc("light blue")
+
+cl = clear
+fc = fillcolor
+bf = begin_fill
+ef = end_fill
 
 #Global Turtle ready to... run
 begin()
 
 if __name__ == "__main__":
+    bgcolor('black')
     hello_world_rainbow()
     getscreen().listen() #allows us to collect key events to move turtle, but window must be active window.
     mainloop()
