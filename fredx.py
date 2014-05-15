@@ -361,9 +361,10 @@ def star(size=100):
         fd(size)
         lt(150)
 
-def loops(size=50):
+def loops(size=100,func=circle):
+    '''Draws loops using the shape function'''
     for i in range(45):
-        circle(size)
+        func(size)
         lt(8)
 
 def house():
