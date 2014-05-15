@@ -462,11 +462,7 @@ ef = end_fill
 begin()
 
 if __name__ == "__main__":
-    # bgcolor('black')
-    # hello_world_rainbow()
-    a(True)
-    a(True)
-    a()
-    a(True)
+    bgcolor('black')
+    hello_world_rainbow()
     getscreen().listen() #allows us to collect key events to move turtle, but window must be active window.
     mainloop()
