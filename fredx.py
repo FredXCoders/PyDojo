@@ -247,7 +247,7 @@ def d(fill=False):
     pd()
     fc(cfc)
 
-def a(fill=True):
+def a(fill=False):
     '''draws a capital A.'''
     if fill: bf()
     fd(10)
@@ -262,15 +262,16 @@ def a(fill=True):
     pu()
     goto(xcor() + 17, ycor() + 50)
     pd()
-    if fill: bf()
-    cfc = fc()
-    fc(getscreen().bgcolor())
-    bf()
+    if fill:
+        cfc = fc()
+        fc(getscreen().bgcolor())
+        bf()
     fd(6)
     goto(xcor() - 3, ycor() + 40)
     goto(xcor() - 3, ycor() - 40)
-    if fill: ef()
-    fc(cfc)
+    if fill:
+        ef()
+        fc(cfc)
     pu()
     goto(xcor() + 33, ycor() - 50)
     pd()
@@ -461,7 +462,11 @@ ef = end_fill
 begin()
 
 if __name__ == "__main__":
-    bgcolor('black')
-    hello_world_rainbow()
+    # bgcolor('black')
+    # hello_world_rainbow()
+    a(True)
+    a(True)
+    a()
+    a(True)
     getscreen().listen() #allows us to collect key events to move turtle, but window must be active window.
     mainloop()
