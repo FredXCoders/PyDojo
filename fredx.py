@@ -453,6 +453,63 @@ def begin():
     shape("turtle")
     fc("light blue")
 
+# Movement Functions
+def mvr(step=10):
+    '''moves the turtle to the right without drawing'''
+    pu()
+    fd(step)
+    pd()
+
+def mvl(step=10):
+    '''moves the turtle to the left without drawing'''
+    pu()
+    bk(step)
+    pd()
+
+def mvu(step=10):
+    '''moves the turtle up without drawing'''
+    pu()
+    sety(ycor()+step)
+    pd()
+
+def mvd(step=10):
+    '''moves the turtle down without drawing'''
+    pu()
+    sety(ycor()-step)
+    pd()
+
+def mvur(step=10):
+    '''moves the turtle diagonally up and right without drawing'''
+    pu()
+    setheading(45)
+    fd(step)
+    setheading(0)
+    pd()
+
+def mvul(step=10):
+    '''moves the turtle diagonally up and left without drawing'''
+    pu()
+    setheading(135)
+    fd(step)
+    setheading(0)
+    pd()
+
+def mvdr(step=10):
+    '''moves the turtle diagonally down and right without drawing'''
+    pu()
+    setheading(-45)
+    fd(step)
+    setheading(0)
+    pd()
+
+def mvdl(step=10):
+    '''moves the turtle diagonally down and left without drawing'''
+    pu()
+    setheading(-135)
+    fd(step)
+    setheading(0)
+    pd()
+
 cl = clear
 fc = fillcolor
 bf = begin_fill
