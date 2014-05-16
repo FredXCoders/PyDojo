@@ -378,18 +378,18 @@ def loops(size=100,func=circle):
         func(size)
         lt(8)
 
-def house(size=100):
+def house(size=100,dcolor='dark red',hcolor='tan'):
     '''draws a house'''
     half = size*.5
     door = size*.6
     oc = color()
-    fc('tan')
+    fc(hcolor)
     bf()
     square(size)
     ef()
     fd(half + (door*.25))
     lt(90)
-    fc('dark red')
+    fc(dcolor)
     bf()
     rectangle(door)
     ef()
@@ -400,7 +400,7 @@ def house(size=100):
     fd(size)
     rt(90)
     pd()
-    fc('tan')
+    fc(hcolor)
     bf()
     triangle(size)
     ef()
@@ -470,9 +470,14 @@ def begin():
     shape("turtle")
     fc("light blue")
 
+def rs():
+    '''moves turtle back to center clears screen and resets the turtle object'''
+    reset()
+    begin()
+
 # Movement Functions
 
-#movement based on turtles heading (angle)
+#movement based on turtles heading (Direction)
 def mvf(step=10):
     '''moves the turtle forward along heading without drawing'''
     pu()
@@ -588,10 +593,10 @@ fc = fillcolor
 bf = begin_fill
 ef = end_fill
 
-#Global Turtle ready to... run
-begin()
-
 if __name__ == "__main__":
+    #Global Turtle ready to... run
+    begin()
+
     bgcolor('black')
     hello_world_rainbow()
     getscreen().listen() #allows us to collect key events to move turtle, but window must be active window.
