@@ -42,6 +42,7 @@ def h(fill=False):
     '''draws a capital H.
      This is a DOCstring, which is a special comment that DOCuments our code.  When you type help() in python it
      displays these strings.  Don't take my word for it... try it yourself!'''
+    setheading(0)
     if fill: bf()
     fd(10)
     lt(90)
@@ -74,6 +75,7 @@ def h(fill=False):
 
 def e(fill=False):
     '''draws a capital E.  Docstrings need to be the first line in a function definition'''
+    setheading(0)
     if fill: bf()
     fd(40)
     lt(90)
@@ -106,6 +108,7 @@ def e(fill=False):
 
 def l(fill=False):
     '''draws a capital L.  Doctrings must use the multi-line comment format.'''
+    setheading(0)
     if fill: bf()
     fd(40)
     lt(90)
@@ -126,6 +129,7 @@ def l(fill=False):
 
 def o(fill=False):
     '''draws a capital O'''
+    setheading(0)
     pu()
     fd(20)
     pd()
@@ -155,6 +159,7 @@ def o(fill=False):
 
 def w(fill=False):
     '''draws a capital W.'''
+    setheading(0)
     pu()
     sety(ycor() + 110)
     pd()
@@ -179,6 +184,7 @@ def w(fill=False):
 
 def r(fill=False):
     '''draws a capital R.'''
+    setheading(0)
     if fill: bf()
     fd(10)
     lt(90)
@@ -217,6 +223,7 @@ def r(fill=False):
 
 def d(fill=False):
     '''draws a capital D'''
+    setheading(0)
     if fill: bf()
     fd(20)
     circle(20, 90)
@@ -249,6 +256,7 @@ def d(fill=False):
 
 def a(fill=False):
     '''draws a capital A.'''
+    setheading(0)
     if fill: bf()
     fd(10)
     goto(xcor() + 5, ycor() + 40)
@@ -285,6 +293,7 @@ def draw_letters(fill=False, color=None, *letters):
 
 def hello_world_rainbow():
     '''draws hello world message in rainbow colors'''
+    setheading(0)
     pu()
     setx(-265)
     pd()
@@ -303,6 +312,7 @@ def hello_world_rainbow():
 
 def hola_world():
     '''draws hola world message in cool green color'''
+    setheading(0)
     pu()
     setx(-215)
     pd()
@@ -368,29 +378,36 @@ def loops(size=100,func=circle):
         func(size)
         lt(8)
 
-def house():
+def house(size=100):
     '''draws a house'''
+    half = size*.5
+    door = size*.6
     oc = color()
     fc('tan')
     bf()
-    square()
+    square(size)
     ef()
-    fd(70)
+    fd(half + (door*.25))
     lt(90)
     fc('dark red')
     bf()
-    rectangle(75)
+    rectangle(door)
     ef()
     pu()
-    goto(xcor()-70,ycor()+100)
+    rt(90)
+    back(half + (door*.25))
+    lt(90)
+    fd(size)
     rt(90)
     pd()
     fc('tan')
     bf()
-    triangle(100)
+    triangle(size)
     ef()
     pu()
-    sety(ycor()-100)
+    rt(90)
+    fd(size)
+    lt(90)
     color(oc[0])
     fc(oc[1])
     pd()
@@ -439,7 +456,7 @@ def begin():
     sc = Screen()
     sc.title("Am I not turtley enough for you.  Turtle, turtle, turtle.")
     sc._root.attributes("-topmost", 1)  # hack to get the window to show in front of the terminal
-    sc._root.attributes("-topmost", 0)
+    #sc._root.attributes("-topmost", 0)
 
     if __name__ == "__main__":
         sc.setup(1.0, 1.0)  # make screen full window
@@ -454,62 +471,118 @@ def begin():
     fc("light blue")
 
 # Movement Functions
-def mvr(step=10):
-    '''moves the turtle to the right without drawing'''
+
+#movement based on turtles heading (angle)
+def mvf(step=10):
+    '''moves the turtle forward along heading without drawing'''
     pu()
     fd(step)
     pd()
 
-def mvl(step=10):
-    '''moves the turtle to the left without drawing'''
+def mvb(step=10):
+    '''moves the turtle back along heading without drawing'''
     pu()
     bk(step)
     pd()
 
-def mvu(step=10):
-    '''moves the turtle up without drawing'''
+def mvl(step=10):
+    '''moves the turtle to the left (up perpendicular from heading on screen) without drawing'''
+    pu()
+    lt(90)
+    fd(step)
+    rt(90)
+    pd()
+
+def mvr(step=10):
+    '''moves the turtle to the right (down perpendicular from heading on screen) without drawing'''
+    pu()
+    rt(90)
+    fd(step)
+    lt(90)
+    pd()
+
+def mvlf(step=10):
+    '''moves the turtle diagonally left(up) and forward from heading without drawing'''
+    pu()
+    lt(45)
+    fd(step)
+    rt(45)
+    pd()
+
+def mvlb(step=10):
+    '''moves the turtle diagonally left(up) and back from heading without drawing'''
+    pu()
+    lt(135)
+    fd(step)
+    rt(135)
+    pd()
+
+def mvrf(step=10):
+    '''moves the turtle diagonally right(down) and forward without drawing'''
+    pu()
+    rt(45)
+    fd(step)
+    lt(45)
+    pd()
+
+def mvrb(step=10):
+    '''moves the turtle diagonally right(down) and back from heading without drawing'''
+    pu()
+    rt(135)
+    fd(step)
+    lt(135)
+    pd()
+
+#movement based on screen coordinates
+def mve(step=10):
+    '''moves the turtle east(right) without drawing'''
+    pu()
+    setx(xcor()+step)
+    pd()
+
+def mvw(step=10):
+    '''moves the turtle west(left) without drawing'''
+    pu()
+    setx(xcor()-step)
+    pd()
+
+def mvn(step=10):
+    '''moves the turtle north(up) without drawing'''
     pu()
     sety(ycor()+step)
     pd()
 
-def mvd(step=10):
-    '''moves the turtle down without drawing'''
+def mvs(step=10):
+    '''moves the turtle south(down) without drawing'''
     pu()
     sety(ycor()-step)
     pd()
 
-def mvur(step=10):
-    '''moves the turtle diagonally up and right without drawing'''
+def mvne(step=10):
+    '''moves the turtle northeast without drawing'''
     pu()
-    setheading(45)
-    fd(step)
-    setheading(0)
+    goto(xcor()+step,ycor()+step)
     pd()
 
-def mvul(step=10):
-    '''moves the turtle diagonally up and left without drawing'''
+def mvnw(step=10):
+    '''moves the turtle northwest without drawing'''
     pu()
-    setheading(135)
-    fd(step)
-    setheading(0)
+    goto(xcor()-step,ycor()+step)
     pd()
 
-def mvdr(step=10):
-    '''moves the turtle diagonally down and right without drawing'''
+def mvsw(step=10):
+    '''moves the turtle southwest without drawing'''
     pu()
-    setheading(-45)
-    fd(step)
-    setheading(0)
+    goto(xcor()-step,ycor()-step)
     pd()
 
-def mvdl(step=10):
-    '''moves the turtle diagonally down and left without drawing'''
+def mvse(step=10):
+    '''moves the turtle southeast without drawing'''
     pu()
-    setheading(-135)
-    fd(step)
-    setheading(0)
+    goto(xcor()+step,ycor()-step)
     pd()
 
+#Create some shortcut function names
 cl = clear
 fc = fillcolor
 bf = begin_fill
