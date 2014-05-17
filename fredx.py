@@ -15,28 +15,6 @@ from turtle import *
 
 __author__ = "sabadam32"
 
-# Only define key functions if this is being run as a program.
-if __name__ == "__main__":
-    def go_up():
-        '''Moves turtle up on the screen when up arrow is pressed'''
-        setheading(90)
-        fd(10)
-
-    def go_right():
-        '''Moves turtle right on screen when right arrow is pressed'''
-        setheading(0)
-        fd(10)
-
-    def go_left():
-        '''Moves turtle left on screen when left arrow is pressed'''
-        setheading(180)
-        fd(10)
-
-    def go_down():
-        '''Moves turtle down on screen when down arrow is pressed'''
-        setheading(270)
-        fd(10)
-
 # Letters are all designed to fit 40 W x 110 H with a 10 W space after the letter making the total width 50
 def h(fill=False):
     '''draws a capital H.
@@ -291,7 +269,7 @@ def draw_letters(fill=False, color=None, *letters):
     for letter in letters:
         letter(fill)
 
-def hello_world_rainbow():
+def hello():
     '''draws hello world message in rainbow colors'''
     setheading(0)
     pu()
@@ -310,7 +288,7 @@ def hello_world_rainbow():
     draw_letters(True, "pink", l)
     draw_letters(True, "red", d)
 
-def hola_world():
+def hola():
     '''draws hola world message in cool green color'''
     setheading(0)
     pu()
@@ -415,11 +393,7 @@ def house(size=100,dcolor='dark red',hcolor='tan'):
 def tree():
     '''draw a tree'''
     oc = color()
-    pu()
-    fd(40)
-    pd()
-    fc('tan')
-    color('tan')
+    fc('saddle brown')
     bf()
     goto(xcor()+20,ycor())
     goto(xcor(),ycor()+80)
@@ -445,7 +419,7 @@ def tree():
     circle(20)
     ef()
     pu()
-    goto(xcor()-70,ycor()-60)
+    goto(xcor()-30,ycor()-60)
     pd()
     color(oc[0])
     fc(oc[1])
@@ -594,10 +568,38 @@ bf = begin_fill
 ef = end_fill
 
 if __name__ == "__main__":
+    def go_up():
+        '''Moves turtle up on the screen when up arrow is pressed'''
+        setheading(90)
+        fd(10)
+
+    def go_right():
+        '''Moves turtle right on screen when right arrow is pressed'''
+        setheading(0)
+        fd(10)
+
+    def go_left():
+        '''Moves turtle left on screen when left arrow is pressed'''
+        setheading(180)
+        fd(10)
+
+    def go_down():
+        '''Moves turtle down on screen when down arrow is pressed'''
+        setheading(270)
+        fd(10)
+
+    def stampit(eks,why):
+        '''moved the turtle to the position on the screen that was clicked and stamps itself'''
+        pu()
+        goto(eks,why)
+        stamp()
+        pd()
+
     #Global Turtle ready to... run
     begin()
 
     bgcolor('black')
-    hello_world_rainbow()
+    hello()
     getscreen().listen() #allows us to collect key events to move turtle, but window must be active window.
+    onscreenclick(stampit)
     mainloop()
