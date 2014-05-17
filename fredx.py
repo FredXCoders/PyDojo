@@ -1,12 +1,13 @@
 '''
-FredX - python tutorial module for the FredX CodeDojo.
+  python tutorial module for the FredX CodeDojo.
 
   This module handles the setup process of the turtle module to minimize typing for beginners.
   Letter functions have been defined to print "HELLO WORLD" graphically on the screen.  Additional fun
   shapes and designs have been added to allow the kids to create some cool effects by stringing them together.
 
   if module is run it will print Hello World message in colors and arrow keys will move the turtle around once
-  the window is active (by clicking it).  The q key will quit the program.
+  the window is active (by clicking it).  Clicking in the window will stamp a turtle in that spot. The q key
+  will quit the program.
 
   to use this module for coding use the "from fredx import *" to import the module contents into the namespace.
   Importing this way allows functions to be used without pre-pending the "fredx." module name.
@@ -16,6 +17,7 @@ from turtle import *
 __author__ = "sabadam32"
 
 # Letters are all designed to fit 40 W x 110 H with a 10 W space after the letter making the total width 50
+# Letters should also advance the turtle to the bottom right of the letter space in prep for the next letter.
 def h(fill=False):
     '''draws a capital H.
      This is a DOCstring, which is a special comment that DOCuments our code.  When you type help() in python it
