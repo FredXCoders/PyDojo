@@ -2,7 +2,7 @@ PyDojo
 ======
 This repo is for the FredX CoderDojo python modules.
 
-FredX is a simple tutorial module that will allow the kids to do some basic things with minimal typing.
+fredx.py is a simple tutorial module that will allow the kids to do some basic things with minimal typing.
 The following functions have been defined:
 Shapes:
  - circle, square, rectangle, triangle, hexagon, octagon, star, flower, house, tree.
