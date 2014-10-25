@@ -30,3 +30,5 @@ Letters:
 
 
 guess.py is a simple number guessing game that will allow the kids to see how variables, loops, and branching work.
+
+secretCode.py is a simple message encoder and decoder.
