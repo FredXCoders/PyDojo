@@ -27,3 +27,6 @@ Shortcuts:
 Letters:
  - h, e, l, o, w, r, d, a - all these draw a letter on the screen
  - draw_letters, hello, hola - these help draw the letters
+
+
+guess.py is a simple number guessing game that will allow the kids to see how variables, loops, and branching work.
