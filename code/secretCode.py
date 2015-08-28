@@ -15,8 +15,8 @@ method = raw_input("Do you want to encode a secret message[y/n]: ")
 key = int(raw_input("Enter a number between 1 and 25 for key: "))
 
 # Now we take all the letters and shift them by the number of spaces set by the key
-# if the key is 2 then A would become C, B would become D, and so on.
-# The letters on the end of the Alphabet wrap to the front so Y would become A and Z would become B
+# if the key is 2 then A would become Y, B would become Z.  After Z the letters start from A again
+# so C would become A, D would become B and so on. 
 shifted_letters = ascii[-key:]+ascii[:-key]
 
 # Make sure we keep the spaces
